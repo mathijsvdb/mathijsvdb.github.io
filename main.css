@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(0, 0%, 8%);
+  color: #fff;
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0;
+  padding-inline: 1ch;
+  white-space: pre-wrap;
+}
+
+.typer {
+  white-space: normal;
+}
+
+.typer span:nth-child(1) {
+  color: hsl(140, 61%, 55%);
+  /* margin-right: 1ch; */
+}
+
+.typer:focus-within::after {
+  content: '';
+  display: inline-block;
+  height: 1lh;
+  width: 1ch;
+  background-color: currentColor;
+  vertical-align: bottom;
+  animation: cursor-blink 1s linear infinite;
+  mix-blend-mode: difference;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+[contenteditable] {
+  caret-color: transparent;
+  outline: 0;
+}
+
+svg {
+  display: block;
+  max-width: 80vw;
+  max-height: 80vh;
+  color: hsl(0, 0%, 6%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+a {
+  color: currentColor;
+}
